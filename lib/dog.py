@@ -15,25 +15,50 @@ class Dog:
         self.name = name
         self.breed = breed
 
-    def get_name(self):
+    @property
+    def name(self):
+        '''The name property'''
         return self._name
 
-    def set_name(self, name):
+    # def get_name(self):
+    #     return self._name
+
+    @name.setter
+    def name(self, name):
+        '''Name must be a string between 1 and 25 in length'''
         if isinstance(name, str) and 1 <= len(name) <= 25:
             self._name = name.title()
         else:
-            raise ValueError(
-                "Name must be string between 1 and 25 characters.")
+            raise ValueError('Name must be a string between 1 and 25')
 
-    name = property(get_name, set_name)
+    # def set_name(self, name):
+    #     if isinstance(name, str) and 1 <= len(name) <= 25:
+    #         self._name = name.title()
+    #     else:
+    #         raise ValueError(
+    #             "Name must be string between 1 and 25 characters.")
 
-    def get_breed(self):
+    # name = property(get_name, set_name)
+
+    @property
+    def breed(self):
+        '''The breed property'''
         return self._breed
 
-    def set_breed(self, breed):
+    # def get_breed(self):
+    #     return self._breed
+
+    @breed.setter
+    def breed(self, breed):
         if breed in APPROVED_BREEDS:
             self._breed = breed
         else:
             raise ValueError("Breed must be in list of approved breeds.")
 
-    breed = property(get_breed, set_breed)
+    # def set_breed(self, breed):
+    #     if breed in APPROVED_BREEDS:
+    #         self._breed = breed
+    #     else:
+    #         raise ValueError("Breed must be in list of approved breeds.")
+
+    # breed = property(get_breed, set_breed)

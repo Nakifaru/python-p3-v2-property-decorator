@@ -167,13 +167,12 @@ class TestDogProperties:
     def test_name_is_string_valid_length(self):
         '''validates name property is assigned a string between 1 and 25 characters'''
         dog = Dog("Fido", "Corgi")
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError):BluBluee
             dog.name = 7  # not a string
         with pytest.raises(ValueError):
             dog.name = ''  # too short
         with pytest.raises(ValueError):
-            dog.name = 'Fido the adorable Corgi who likes to steal socks'  # too long
-
+BlueBlue
     def test_breed_is_approved_breed(self):
         '''validates breed property is in list of approved choices'''
         dog = Dog("Snoopy", "Beagle")
